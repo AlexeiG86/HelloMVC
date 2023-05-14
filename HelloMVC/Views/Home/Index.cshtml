@@ -1,0 +1,40 @@
+﻿@model List<Students>
+
+@{
+    ViewData["Title"] = "Home Page";
+    var message = "Alex is cool";
+
+    var students = new List<Students>
+    {
+        new Students(){FirstName = "Bob"},
+        new Students(){FirstName = "Cob"},
+        new Students(){FirstName = "Dob"},
+        new Students(){FirstName = "Qob"}
+    };
+}
+
+
+
+<h1>
+    Say some statements :@message
+
+
+</h1>
+
+@foreach (var student in students)
+{
+    <li>
+        @student.FirstName
+    </li>
+}
+
+
+<ul>
+
+
+
+</ul>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

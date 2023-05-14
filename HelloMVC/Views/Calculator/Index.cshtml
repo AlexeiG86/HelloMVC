@@ -1,0 +1,39 @@
+﻿@model Calculus
+
+<div class="text-center">
+    <h1 ">Calculator the home of the math</h1>
+    
+    <form method="post">
+        <div class="form-group ">
+            <div class="">
+                <label>NUmber 1:</label>
+                <input type="number" name="nr1" value="@Model.Nr1" class="form-control">
+            </div>
+            <div>
+                <label>Operand:</label>
+                <select name="operand" value="@Model.Operand" class="form-control">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </div>
+            <div>
+                <label>Number 2:</label>
+                <input type="number" name="nr2" value="@Model.Nr2" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+            <br />
+            <br />
+            <br />
+            <div class="alert alert-success">
+                <label>Result: @Model.Result</label>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <label>@Html.Raw(ViewBag.Log)</label> <!--sending a value of log from controler to log   -->
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,8 +1,12 @@
-﻿<form>
+﻿<form method="post">
+
+
+
+    <!-- when we want to send data from view to the controller we need 3 thing, Form ,imput with the names and button button   -->
     <div class="mb-3">
 
-        <label class="form-label">First Name</label>
-        <input class="form-control" type = "text" value="" name="firstName" />
+        <label class="form-label">First Name</label>   <!--  our Label  -->
+        <input class="form-control" type="text" value="" name="firstName" />  <!-- our imput   -->
 
         <div class="mb-3">
             <label class="form-label">Last Name</label>
@@ -11,7 +15,7 @@
             <div class="mb-3">
 
 
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" type="submit">    <!-- our submit buttom   -->
                 Create New Employee
             </button>
         </div>

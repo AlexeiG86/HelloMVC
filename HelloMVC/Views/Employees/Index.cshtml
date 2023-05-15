@@ -20,8 +20,8 @@
                         <ul class=" list-group">
                             <li class="list-group-item mb-2">
                                 <div>
-                                    @vacation.StarDate.ToString("dd MMMM, yyyy") - @vacation.EndDate.ToString("dd MMMM, yyyy")
-                                    <span class="text-success"> <strong>@((vacation.EndDate - vacation.StarDate).Days + 1) days</strong></span>
+                                    @vacation.StartDate.ToString("dd MMMM, yyyy") - @vacation.EndDate.ToString("dd MMMM, yyyy")
+                                    <span class="text-success"> <strong>@((vacation.EndDate - vacation.StartDate).Days + 1) days</strong></span>
                                 </div>
                                 <div>
                                     @vacation.Comment
@@ -34,7 +34,7 @@
 
                         @*<a href="/Employees/Edit/@employee.EmployeeId" class="btn btn-primary">Edit</a>*@
                         <a asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.EmployeeId" class="btn btn-primary">Edit</a>
-                        <a asp-controller="Vacations" asp-action="Index" asp-route-EmployeeId="@employee.EmployeeId" class="btn btn-primary">Manage Vacation Data</a>
+                        <a asp-controller="Employees" asp-action="ManageVacation" asp-route-EmployeeId="@employee.EmployeeId" class="btn btn-primary">Manage Vacation Data</a>
                     </div>
                 </div>
             </div>
@@ -47,5 +47,4 @@
   
 
     
-
 

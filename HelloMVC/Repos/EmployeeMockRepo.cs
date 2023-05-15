@@ -4,16 +4,16 @@ namespace HelloMVC.Repos
 {
     public class EmployeeMockRepo : IEmployeeRepo
     {
-       private static List<Employee>_employees;
+       private static List<Employee>_employees; //our private field
 
-        public Employee CreateEmployee(Employee employee)
+        public Employee CreateEmployee(Employee employee) //creating an impolyee and add it to the List
         {
-            employee.EmployeeId = _employees.Max(p=>p.EmployeeId)+1;
+            employee.EmployeeId = _employees.Max(p=>p.EmployeeId)+1;//getting the max employee Id
             _employees.Add(employee);
             return employee;
         }
 
-        public EmployeeMockRepo()
+        public EmployeeMockRepo()       //our constructor
         {
             var eml = new List<Employee>();
             eml.Add(new Employee()
@@ -25,13 +25,13 @@ namespace HelloMVC.Repos
             {
                 new VacationRequest()
                 {
-                StarDate= new DateTime(2023,12,25),
+                StartDate= new DateTime(2023,12,25),
                 EndDate = new DateTime (2023,12,25 ),
                 Comment ="Going to visit for Christmas"
                 },
                 new VacationRequest()
                 {
-                StarDate= new DateTime(2023,6,6),
+                StartDate= new DateTime(2023,6,6),
                 EndDate = new DateTime (2023,6,9 ),
                 Comment ="Summer Vacation"
                 }
@@ -65,7 +65,7 @@ namespace HelloMVC.Repos
             return entity;
         }
 
-        internal List<VacationRequest> GetVacations(int id)
+        public List<VacationRequest> GetVacations(int id)
         {
             List<VacationRequest> tempList = new List<VacationRequest>();
             var empName = _employees.FirstOrDefault(p => p.EmployeeId == id);
@@ -78,7 +78,7 @@ namespace HelloMVC.Repos
             return tempList;
         }
 
-        internal void DeleteVacation(int vacationId)
+        public void DeleteVacation(int vacationId)
         {
             List<VacationRequest> tempList = new List<VacationRequest>();
             var empName = _employees.FirstOrDefault(e => e.VacationRequests.Any(p => p.VacationRequestId == vacationId));

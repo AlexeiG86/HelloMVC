@@ -19,7 +19,7 @@ namespace HelloMVC.Repos
         public List<VacationRequest> GetVacationsById(int id)        {
             return (emp.GetVacations(id));
 
-        }        public void DeleteVacationByVacationId(int vacationId)        {            emp.DeleteVacation(vacationId);        }
+        }       
 
 
 

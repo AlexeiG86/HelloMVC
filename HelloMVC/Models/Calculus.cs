@@ -3,7 +3,6 @@ using System.Xml.Schema;
 using System.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace HelloMVC.Models
@@ -17,6 +16,9 @@ namespace HelloMVC.Models
         public int Result{ get; set;}
 
         public string Operand { get; set; }
-       
+
+        public string ErrorMessage { get; set; }
+
+
     }
 }
